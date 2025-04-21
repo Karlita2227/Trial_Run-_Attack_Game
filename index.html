@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Turn-Based Battle Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>🤺 Karla's Knight JavaScript Challenge ♘</title>
 </head>
 <body>
-  <div id="game">
-    <h1>Turn-Based Battle</h1>
-    <div class="players">
-      <div id="player1" class="player">
-        <h2>Player 1</h2>
-        <p>HP: <span id="hp1">100</span></p>
-        <button onclick="playerAction(1, 'attack')">Attack</button>
-        <button onclick="playerAction(1, 'defend')">Defend</button>
-      </div>
-      <div id="player2" class="player">
-        <h2>Player 2</h2>
-        <p>HP: <span id="hp2">100</span></p>
-        <button onclick="playerAction(2, 'attack')">Attack</button>
-        <button onclick="playerAction(2, 'defend')">Defend</button>
-      </div>
+    <h2 id="title">🤺 Karla's Knight JavaScript Challenge ♘</h2>
+    <div id="gameOverScreen">
+        <h2>GAME OVER!</h2>
+        <h3 id="winningPlayer"></h3>
     </div>
-    <p id="status">Player 1's turn</p>
-  </div>
-
-  <script src="game.js"></script>
+    <div id="playerTurn">
+        <h2><span id="playerName">Player 1</span>'s turn!</h2>
+    </div>
+    <div id="fightingSpace">
+        <div class="player" id='playerOne'>
+            <h2>Player 1</h2>
+            <div class="healthSection">
+                <span>Health: </span><span id="playerOneHealth">100</span>
+            </div>
+            <div class="playerSpace">
+                <img id="playerOneSprite" class="idle" src="./images/R_Idle.png" alt="">
+                <span>Image by <a
+                        href="https://www.freepik.com/free-vector/set-warrior-different-postures_1354461.htm#query=robot%20sprite&position=8&from_view=keyword&track=ais">
+                        Freepik</a></span>
+                <button id="playerOneAttack" class="inactive" onclick="attackPlayerOne()">Attack!</button>
+            </div>
+        </div>
+        <div class="player" id='playerTwo'>
+            <h2>Player 2</h2>
+            <div class="healthSection">
+                <span>Health: </span><span id="playerTwoHealth"> 100</span>
+            </div>
+            <div class="playerSpace">
+                <img id="playerTwoSprite" class="idle" src="./images/L_Idle.png" alt="">
+                <span>Image by <a
+                        href="https://www.freepik.com/free-vector/set-warrior-different-postures_1354461.htm#query=robot%20sprite&position=8&from_view=keyword&track=ais">
+                        Freepik</a></span>
+                <button id="playerTwoAttack" class="active" onclick="attackPlayerTwo()">Attack!</button>
+            </div>
+        </div>
+        <div><audio id="SFX_PlayerDamage" src="audio/SFX_PlayerDamage.wav"></audio></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
