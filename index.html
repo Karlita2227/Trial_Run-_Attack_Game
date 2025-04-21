@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Turn-Based Battle Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <h1>Turn-Based Battle</h1>
+    <div class="players">
+      <div id="player1" class="player">
+        <h2>Player 1</h2>
+        <p>HP: <span id="hp1">100</span></p>
+        <button onclick="playerAction(1, 'attack')">Attack</button>
+        <button onclick="playerAction(1, 'defend')">Defend</button>
+      </div>
+      <div id="player2" class="player">
+        <h2>Player 2</h2>
+        <p>HP: <span id="hp2">100</span></p>
+        <button onclick="playerAction(2, 'attack')">Attack</button>
+        <button onclick="playerAction(2, 'defend')">Defend</button>
+      </div>
+    </div>
+    <p id="status">Player 1's turn</p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
